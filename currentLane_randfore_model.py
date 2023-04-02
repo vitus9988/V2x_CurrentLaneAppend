@@ -10,7 +10,7 @@ from sklearn.model_selection import GridSearchCV
 def origin_model(leanrDataPath):
     data = pd.read_csv(leanrDataPath)
 
-    X = data.drop(columns=['CURRENT_LANE','SPEED'], axis=1)
+    X = data.drop(columns=['CURRENT_LANE'], axis=1)
     y = data["CURRENT_LANE"]
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=121, shuffle=True)
